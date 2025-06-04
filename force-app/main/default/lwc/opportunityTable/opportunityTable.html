@@ -1,23 +1,9 @@
 <template>
     <h1>Opportunity List</h1>
-    <table>
-        <thead>
-            <tr>
-                <th>Opportunity Name</th>
-                <th>Stage</th>
-                <th>Amount</th>
-                <th>Close Date</th>
-            </tr>
-        </thead>
-        <tbody>
-            <template for:each={opportunities} for:item="opportunity">
-                <tr key={opportunity.task}>
-                    <td>{opportunity.task}</td>
-                    <td class={opportunity.style}>{opportunity.status}</td>
-                    <td class="align-right">{opportunity.price}</td>
-                    <td>{opportunity.date}</td>
-                </tr>
-            </template>
-        </tbody>
-    </table>
+    <lightning-datatable
+            key-field="task"
+            hide-checkbox-column
+            data={opportunities}
+            columns={columns}>
+    </lightning-datatable>
 </template>

@@ -8,4 +8,11 @@ export default class OpportunityTable extends LightningElement {
         { task: "Customize checkout", status: "Prospecting", price: "$800", date: "2024-07-16", style: "color-orange" },
         { task: "Customize PDP", status: "Closed Won", price: "$500", date: "2024-05-16", style: "color-green" }
     ];
+
+    columns = [
+        {label: 'Opportunity Name', fieldName: 'task'},
+        {label: 'Stage', fieldName: 'status'},
+        {label: 'Amount', fieldName: 'price'},
+        {label: 'Close Date', fieldName: 'date'}
+    ];
 }
