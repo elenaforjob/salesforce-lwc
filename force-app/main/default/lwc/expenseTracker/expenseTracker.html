@@ -1,57 +1,25 @@
 <template>
     <div class="expenses__container">
-      <header>
-        <h1>Personal Expense Tracker</h1>
-      </header>
-      <main>
+      <h1>Personal Expense Tracker</h1>
         <table>
-          <thead>
+            <thead>
             <tr>
-              <th>Expense Name</th>
-              <th>Category</th>
-              <th>Amount</th>
-              <th>Date</th>
+                <th>Expense Name</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
             </tr>
-          </thead>
-          <tbody>
-            <tr class="odd">
-              <td>{expense1.name}</td>
-              <td>{expense1.category}</td>
-              <td>${expense1.amount}</td>
-              <td>{expense1.date}</td>
-            </tr>
-            <tr class="even">
-              <td>{expense2.name}</td>
-              <td>{expense2.category}</td>
-              <td>${expense2.amount}</td>
-              <td>{expense2.date}</td>
-            </tr>
-            <tr class="odd">
-              <td>{expense3.name}</td>
-              <td>{expense3.category}</td>
-              <td>${expense3.amount}</td>
-              <td>{expense3.date}</td>
-            </tr>
-            <tr class="even">
-              <td>{expense4.name}</td>
-              <td>{expense4.category}</td>
-              <td>${expense4.amount}</td>
-              <td>{expense4.date}</td>
-            </tr>
-            <tr class="odd">
-              <td>{expense5.name}</td>
-              <td>{expense5.category}</td>
-              <td>${expense5.amount}</td>
-              <td>{expense5.date}</td>
-            </tr>
-            <tr class="even">
-              <td>{expense6.name}</td>
-              <td>{expense6.category}</td>
-              <td>${expense6.amount}</td>
-              <td>{expense6.date}</td>
-            </tr>
-          </tbody>
+            </thead>
+            <tbody>
+                <template for:each={expenses} for:item="expense">
+                    <tr key={expense.name} class={expense.class}>
+                        <td>{expense.name}</td>
+                        <td>{expense.category}</td>
+                        <td>${expense.amount}</td>
+                        <td>{expense.date}</td>
+                    </tr>
+                </template>
+            </tbody>
         </table>
-      </main>
     </div>
 </template>
