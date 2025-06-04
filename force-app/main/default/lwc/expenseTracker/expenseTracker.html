@@ -1,0 +1,11 @@
+<template>
+    <div class="expenses__container">
+        <h1>Personal Expense Tracker</h1>
+        <lightning-datatable
+                key-field="name"
+                hide-checkbox-column
+                data={expenses}
+                columns={columns}>
+        </lightning-datatable>
+    </div>
+</template>
