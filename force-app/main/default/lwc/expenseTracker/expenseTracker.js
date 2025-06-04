@@ -9,4 +9,12 @@ export default class ExpenseTracker extends LightningElement {
         {name: 'Courses', category: 'Education', amount: 150, date: 'Jan 08', class: 'odd'},
         {name: 'Internet', category: 'Rent', amount: 15, date: 'Jan 01', class: 'even'}
     ];
+
+    
+    columns = [
+        {label: 'Expense Name', fieldName: 'name'},
+        {label: 'Categor', fieldName: 'category'},
+        {label: 'Amount', fieldName: 'amount', type: 'integer'},
+        {label: 'Date', fieldName: 'date'}
+    ];
 }

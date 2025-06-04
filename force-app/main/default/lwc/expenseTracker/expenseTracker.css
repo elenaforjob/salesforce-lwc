@@ -1,6 +1,6 @@
 .expenses__container {
     background-color: blue;
-    color: white;
+    color: #424242;
     border-radius: 5px;
     text-align: center;
     padding: 5px;
@@ -8,26 +8,6 @@
     h1 {
         font-size: 1.5rem;
         padding: 5px;
-    }
-}
-
-table {
-    background-color: white;
-
-    th {
-        background-color: rgba(197, 197, 247, 0.775);
-        padding: 5px;
-        text-align: center;
-        color: blue;
-    }
-
-    td {
-        color:#424242;
-        padding: 5px;
-        font-weight: 600;
-    }
-
-    .even {
-        background-color: #f7f7f7;
+        color: white;
     }
 }
