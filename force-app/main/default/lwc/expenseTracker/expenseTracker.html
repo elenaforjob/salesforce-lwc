@@ -1,0 +1,25 @@
+<template>
+    <div class="expenses__container">
+      <h1>Personal Expense Tracker</h1>
+        <table>
+            <thead>
+            <tr>
+                <th>Expense Name</th>
+                <th>Category</th>
+                <th>Amount</th>
+                <th>Date</th>
+            </tr>
+            </thead>
+            <tbody>
+                <template for:each={expenses} for:item="expense">
+                    <tr key={expense.name} class={expense.class}>
+                        <td>{expense.name}</td>
+                        <td>{expense.category}</td>
+                        <td>${expense.amount}</td>
+                        <td>{expense.date}</td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+    </div>
+</template>
