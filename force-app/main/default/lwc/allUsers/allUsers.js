@@ -1,5 +1,5 @@
 import { LightningElement } from 'lwc';
-import allUsersController from '@salesforce/apex/allUsersController.getAllUsersController';
+import getAllUsers from '@salesforce/apex/allUsersController.getAllUsers';
 
 export default class AllUsers extends LightningElement {
     allUsers = [];
@@ -9,7 +9,7 @@ export default class AllUsers extends LightningElement {
     ];
 
     connectedCallback(){
-        allUsersController()
+        getAllUsers()
             .then(data=>{
                 this.allUsers = data;
             })
