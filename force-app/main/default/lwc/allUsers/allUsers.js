@@ -1,5 +1,5 @@
-import { LightningElement } from 'lwc';
-import allUsersController from '@salesforce/apex/allUsersController.getAllUsersController';
+import { LightningElement, wire } from 'lwc';
+import getAllUsers from '@salesforce/apex/allUsersController.getAllUsers';
 
 export default class AllUsers extends LightningElement {
     allUsers = [];
@@ -8,11 +8,13 @@ export default class AllUsers extends LightningElement {
         { label: 'Name', fieldName: 'Name' }
     ];
 
-    connectedCallback(){
-        allUsersController()
-            .then(data=>{
-                this.allUsers = data;
-            })
-            .catch(err => console.log(err));
+    @wire(getAllUsers)
+    wiredContacts({error, data}) {
+        if (data) {
+            this.allUsers = data;
+        }
+        if (error) {
+            console.log(error);
+        }
     }
 }
