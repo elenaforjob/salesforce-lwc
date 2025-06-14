@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Modified Accounts" icon-name="action:new_account">
+        <lightning-datatable
+            hide-checkbox-column
+            key-field="id"
+            data={accounts}
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
