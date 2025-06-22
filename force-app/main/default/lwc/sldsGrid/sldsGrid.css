@@ -1,0 +1,9 @@
+.slds-col h2 {
+  font-size: 1.2rem;
+}
+
+.slds-col .number {
+  color: blue;
+  font-size: 2rem;
+  font-weight: 800;
+}
