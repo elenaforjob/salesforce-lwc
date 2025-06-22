@@ -1,0 +1,16 @@
+<template>
+    <lightning-card  title="Print User Input">
+        <lightning-input
+            type="text"
+            class="slds-m-left_small"
+            label="Enter some text"
+            value={inputValue}
+            onchange={printInputValue}
+            placeholder="type here...">
+        </lightning-input>
+        <p class="slds-m-left_small">
+            <span class="slds-text-title_caps">You typed: </span>
+            {inputValue}
+        </p>
+    </lightning-card>
+</template>
