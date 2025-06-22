@@ -1,0 +1,42 @@
+<template>
+    <lightning-card  title="Calculator">
+        <div class="slds-m-left_small">
+            <lightning-input
+                type="text"
+                onchange={saveFirstOperand}
+                label="First operand">
+            </lightning-input>
+            <lightning-input
+                type="text"
+                onchange={saveSecondOperand}
+                label="Second operand">
+            </lightning-input>
+        </div>
+        <div class="slds-m-top_large">
+            <lightning-button
+                variant="brand"
+                label="Calculate"
+                title="Primary action"
+                onclick={handleClick}
+                class="slds-m-left_small slds-m-top_large">
+            </lightning-button>
+        </div>
+        <h2 class="slds-text-title_caps slds-m-top_medium slds-m-left_small">Calculated Results</h2>
+        <p class="slds-m-left_small">
+            <span class="slds-text-title_caps">Sum is: </span>
+            {sum}
+        </p>
+        <p class="slds-m-left_small">
+            <span class="slds-text-title_caps">Multiplication is: </span>
+            {multiplication}
+        </p>
+        <p class="slds-m-left_small">
+            <span class="slds-text-title_caps">Subtraction is: </span>
+            {subtraction}
+        </p>
+        <p class="slds-m-left_small">
+            <span class="slds-text-title_caps">Division is: </span>
+            {division}
+        </p>
+    </lightning-card>
+</template>
