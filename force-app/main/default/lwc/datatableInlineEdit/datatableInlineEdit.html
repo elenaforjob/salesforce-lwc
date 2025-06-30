@@ -1,0 +1,21 @@
+<template>
+    <lightning-card  title="Datatable Inline Edit">
+        <div class="slds-text-align_right slds-m-bottom_medium">
+            <lightning-button
+                variant="brand"
+                label="Add Contact"
+                title="Add Contact"
+                onclick={handleAddContact}
+                class="slds-m-left_x-small">
+            </lightning-button>
+        </div>
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            draft-values={draftValues}
+            onsave={handleSave}
+            oncancel={handleCancel}
+            columns={columns}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
