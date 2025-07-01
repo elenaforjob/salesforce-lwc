@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Related Contacts" icon-name="standard:contact">
+        <div>
+            <c-new-contact-form
+                onnewcontact={handleNewContact}
+                account-id={recordId}>
+            </c-new-contact-form>
+        </div>
+        <lightning-datatable
+            key-field="Id"
+            data={contacts}
+            columns={columns}
+            hide-checkbox-column
+        >
+        </lightning-datatable>
+    </lightning-card>
+</template>
