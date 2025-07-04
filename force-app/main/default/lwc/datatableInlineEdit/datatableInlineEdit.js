@@ -27,7 +27,15 @@ export default class DatatableInlineEdit extends LightningElement {
 
     handleSave(event) {
         this.draftValues = event.detail.draftValues;
-console.log('DRAFT', this.draftValues);
+        this.draftValues.forEach(contact => {
+            contact.AccountId = this.recordId;
+
+            if (contact.Id === '') {
+                delete contact.Id;
+            }
+        });
+
+        console.log('Draft ', this.draftValues);
         saveContacts({ contacts: this.draftValues, accountId: this.recordId })
             .then(result => {
                 this.contacts = result;
@@ -54,13 +62,16 @@ console.log('DRAFT', this.draftValues);
     }
 
     handleAddContact() {
-        this.contacts = [...this.contacts, {
+        let newContact = {
             "Id": "",
             "FirstName": "",
             "LastName": "",
             "Email": "",
             "Phone": "",
             "AccountId": this.recordId
-        }];
+        };
+
+        this.draftValues = [...this.draftValues, newContact];
+        this.contacts = [...this.contacts, newContact];
     }
 }
