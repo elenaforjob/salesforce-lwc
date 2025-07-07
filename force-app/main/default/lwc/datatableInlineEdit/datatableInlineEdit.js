@@ -12,7 +12,8 @@ export default class DatatableInlineEdit extends LightningElement {
         {label: 'First Name', fieldName: 'FirstName', editable: true},
         {label: 'Last Name', fieldName: 'LastName', editable: true},
         {label: 'Email', fieldName: 'Email', type: 'email', editable: true},
-        {label: 'Phone', fieldName: 'Phone', type: 'phone', editable: true}
+        {label: 'Phone', fieldName: 'Phone', type: 'phone', editable: true},
+        {label: 'Delete', type: 'button', typeAttributes: { label: 'Delete', variant: 'destructive', iconName: 'action:delete' }}
     ];
 
     connectedCallback() {
@@ -71,5 +72,9 @@ export default class DatatableInlineEdit extends LightningElement {
         };
 
         this.contacts = [...this.contacts, newContact];
+    }
+
+    handleDelete(event) {
+        console.log
     }
 }
