@@ -13,4 +13,10 @@ public with sharing class DatatableInlineEditController {
         upsert contacts;
         return getRelatedContacts(accountId);
     }
+
+    @AuraEnabled
+    public static List<Contact> deleteContact(Contact contact, Id accountId) {
+        delete contact;
+        return getRelatedContacts(accountId);
+    }
 }

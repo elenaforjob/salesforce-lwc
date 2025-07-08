@@ -1,6 +1,7 @@
 import { LightningElement, api } from 'lwc';
 import getRelatedContacts from '@salesforce/apex/DatatableInlineEditController.getRelatedContacts';
 import saveContacts from '@salesforce/apex/DatatableInlineEditController.saveContacts';
+import deleteContact from '@salesforce/apex/DatatableInlineEditController.deleteContact';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
 export default class DatatableInlineEdit extends LightningElement {
@@ -13,7 +14,7 @@ export default class DatatableInlineEdit extends LightningElement {
         {label: 'Last Name', fieldName: 'LastName', editable: true},
         {label: 'Email', fieldName: 'Email', type: 'email', editable: true},
         {label: 'Phone', fieldName: 'Phone', type: 'phone', editable: true},
-        {label: 'Delete', type: 'button', typeAttributes: { label: 'Delete', variant: 'destructive', iconName: 'action:delete' }}
+        {label: 'Delete', type: 'button', typeAttributes: {name: 'delete', title: 'delete', label: 'Delete', variant: 'destructive', iconName: 'action:delete'}}
     ];
 
     connectedCallback() {
@@ -74,7 +75,18 @@ export default class DatatableInlineEdit extends LightningElement {
         this.contacts = [...this.contacts, newContact];
     }
 
-    handleDelete(event) {
-        console.log
+    handleAction(event) {
+        let action = event.detail.action.name;
+        let contactToDelete = event.detail.row;
+
+        if (action === 'delete') {
+            deleteContact({ contact: contactToDelete, accountId: this.recordId })
+                .then(result => {
+                    this.contacts = result;
+                })
+                .catch(err => {
+                    console.log(err);
+                });
+        }
     }
 }
