@@ -59,6 +59,13 @@ export default class SimpleParent extends LightningElement {
             });
     }
 
+    // handleConfirmDelete(event) {
+    //        WarningAction.open({
+    //            contactName: event.detail.row.FirstName + ' ' + event.detail.row.LastName,
+    //            ondeleteconfirm: (result) => { this.deleteContact(event.detail.row) }
+    //        });
+    // }
+
     deleteContact(event) {
         deleteContact({ contact: event.detail.row })
             .then(() => {

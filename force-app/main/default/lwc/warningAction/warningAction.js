@@ -6,6 +6,14 @@ export default class WarningAction extends LightningModal {
 
     handleOkay() {
         this.close('okay');
+
+        // Events from modal caught by the component which opened it
+        // let event = new CustomEvent('confirmdelete', {
+        //    detail: {
+        //        contactName: this.contactName
+        //    }
+        // });
+        // this.dispatchEvent(event);
     }
 
     handleDismiss() {
