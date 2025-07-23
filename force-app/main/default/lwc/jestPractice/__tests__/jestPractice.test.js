@@ -16,7 +16,12 @@ describe("Tests for c-jest-practice", () => {
 
     document.body.appendChild(element);
 
-    const nameElement = element.shadowRoot.querySelector("p");
-    expect(nameElement.textContent).toBe("Hello, Jest!");
+    const buttonToTest = element.shadowRoot.querySelector(".click-me-button");
+    buttonToTest.dispatchEvent(new CustomEvent("click"));
+
+    return Promise.resolve().then(() => {
+      const message = element.shadowRoot.querySelector("p");
+      expect(message.textContent).toBe("Button was clicked!");
+    });
   });
 });
