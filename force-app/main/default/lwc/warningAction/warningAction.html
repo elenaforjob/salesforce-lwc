@@ -1,0 +1,20 @@
+<template>
+    <lightning-modal-header label="Please confirm the delete operation"></lightning-modal-header>
+    <lightning-modal-body>
+        The contact <b>{contactName}</b> is about to be deleted. Please click on "OK" to confirm.
+    </lightning-modal-body>
+    <lightning-modal-footer>
+        <lightning-button
+            class="slds-button"
+            variant="neutral"
+            label="Cancel"
+            onclick={handleDismiss}
+        ></lightning-button>
+        <lightning-button
+            class="slds-button slds-m-left_x-small"
+            variant="destructive"
+            label="Yes, delete!"
+            onclick={handleOkay}
+        ></lightning-button>
+    </lightning-modal-footer>
+</template>
